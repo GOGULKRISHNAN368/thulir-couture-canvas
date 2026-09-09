@@ -15,7 +15,7 @@ export function useReveals() {
         entries.forEach((e) => {
           if (!e.isIntersecting) return;
           const el = e.target as HTMLElement;
-          const i = Number(el.dataset.revealIndex ?? 0);
+          const i = Number(el.dataset["revealIndex"] ?? 0);
           el.style.transitionDelay = `${Math.min(i, 4) * 70}ms`;
           el.classList.add("is-in");
           io.unobserve(el);
